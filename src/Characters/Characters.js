@@ -1,15 +1,14 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Character from "../Character/Character";
 
 const Characters = () => {
 
     let [characters, setCharacters] = useState([]);
-    useState([])
 
     fetch('https://rickandmortyapi.com/api/character')
         .then(value => value.json())
         .then(value => {
-            setCharacters(value)
+            setCharacters(value.results)
         })
 
     return (
