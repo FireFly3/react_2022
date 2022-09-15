@@ -8,11 +8,11 @@ const Users = () => {
     fetch('https://jsonplaceholder.typicode.com/users')
         .then(value => value.json())
         .then(value => {
-setUsers(value)
+            setUsers(value)
         });
     return (
         <div>
-            {users.map((user, index)=>(<User item={user} key={index}/>))}
+            {users.map((user, index) => (<User item={user} key={index}/>))}
         </div>
     );
 };
