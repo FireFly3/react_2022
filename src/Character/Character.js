@@ -1,9 +1,10 @@
 import React from 'react';
 
-const Character = () => {
+const Character = (props) => {
+    let{item} = props;
     return (
         <div>
-            
+            <h2>{item.id} - {item.name}</h2>
         </div>
     );
 };
