@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 
 import User from "../User/User";
-
 import {getUsersAxios} from "../services/user.api.axios.servise";
 
 
@@ -25,7 +24,6 @@ const Users = () => {
                 <h4>City: {user?.address.city}</h4>
                 <h4>Street: {user?.address.street}</h4>
                 <h4>Suite: {user?.address.suite}</h4>
-
                 <hr/>
                 {users.map((user, index) => (<User item={user} key={index} lift={lift}/>))}
             </div>
