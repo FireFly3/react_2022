@@ -8,7 +8,7 @@ const Launches = () => {
     let [launches, setLaunches] = useState([])
 
     useEffect(()=>{
-        getLaunchAxios().then(value => setLaunches(value.data) )
+        getLaunchAxios().then(value => setLaunches(value.data.launch_year.filter()) )
 
     },[])
 
