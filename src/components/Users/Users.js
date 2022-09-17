@@ -1,9 +1,7 @@
 import React, {useEffect, useState} from 'react';
 
 import User from "../User/User";
-import {getUsers} from "../services/user.api.service";
-import {getUsersAxios} from "../services/user.api.axios.servise";
-import {logDOM} from "@testing-library/react";
+import {getUsersAxios} from "../services/launch.api.axios.servise";
 
 const Users = () => {
 
@@ -14,18 +12,6 @@ const Users = () => {
         setUser(id);
     }
 
-    // useEffect(() => {
-    //     fetch('https://jsonplaceholder.typicode.com/users')
-    //         .then(value => value.json())
-    //         .then(value => {
-    //             setUsers(value)
-    //         });
-    // }, [])
-
-    // useEffect(() => {
-    //     getUsers().then(value =>
-    //         setUsers(value));
-    //     }, []);
 
     useEffect(() => {
         getUsersAxios().then(value => setUsers(value.data))
@@ -34,10 +20,13 @@ const Users = () => {
         return (
             <div>
                 <hr/>
-                {/*{user && <div>{JSON.stringify(user)} </div>}*/}
-                {/*{user? <div>asd</div>:<div>qwe</div>}*/}
-                {/*{JSON.stringify(user)}*/}
-                <div>{user?.username}</div>
+                <div>User Name: {user?.username}</div>
+                <div>Email: {user?.email}</div>
+                <div>City: {user?.address.city}</div>
+                <div>Street: {user?.address.street}</div>
+                <div>Suite: {user?.address.suite}</div>
+
+
                 <hr/>
                 {users.map((user, index) => (<User item={user} key={index} lift={lift}/>))}
             </div>
