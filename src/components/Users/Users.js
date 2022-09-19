@@ -14,7 +14,6 @@ const Users = () => {
     return (
         <div>
             {users.map((user, index)=>(<User user={user} key={index}/>))}
-            <button>User posts</button>
         </div>
     );
 };
