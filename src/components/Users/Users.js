@@ -6,6 +6,11 @@ import User from "../User/User";
 const Users = () => {
 
     let [users, setUsers] = useState([]);
+    let [posts, setPosts] = useState(null)
+
+    const lift = (id) => {
+        setPosts(id);
+    }
 
     useEffect(()=>{
         getUsersAxios().then(value => setUsers(value.data))
@@ -13,7 +18,7 @@ const Users = () => {
 
     return (
         <div>
-            {users.map((user, index)=>(<User user={user} key={index}/>))}
+            {users.map((user, index)=>(<User user={user} key={index} lift={lift}/>))}
         </div>
     );
 };

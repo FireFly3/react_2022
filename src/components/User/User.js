@@ -1,13 +1,13 @@
 import React from 'react';
 
 const User = (props) => {
-    let {user} = props;
+    let {user, lift} = props;
     return (
         <div>
             <h2>{user.id} {user.name}</h2>
             <div>User Name: {user.username}</div>
             <div>Email: {user.email}</div>
-            <button>User posts</button>
+            <button onClick={lift}>User posts</button>
         </div>
     );
 };
