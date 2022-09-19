@@ -8,4 +8,8 @@ const getUsersAxios = () => {
     return axiosInstance.get()
 }
 
-export {getUsersAxios}
+const getPostsAxios = (id) => {
+    return axiosInstance.get('/'+id+'/posts')
+}
+
+export {getUsersAxios, getPostsAxios}
