@@ -11,7 +11,7 @@ const Posts = () => {
     }
 
     useEffect(()=>{
-        getPostsAxios().then(value => setPosts(value))
+        getPostsAxios(user.id).then(value => setPosts(value))
     },[])
 
     return (

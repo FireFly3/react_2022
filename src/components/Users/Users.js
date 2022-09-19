@@ -13,7 +13,7 @@ const Users = () => {
     }
 
     useEffect(()=>{
-        getUsersAxios().then(value => setUsers(value.data))
+        getUsersAxios(id).then(value => setUsers(value.data))
     },[]);
 
     useEffect(()=>{
