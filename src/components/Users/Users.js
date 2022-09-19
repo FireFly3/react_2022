@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 
-import {getUsersAxios} from "../services/users.api.axios.service";
+import {getPostsAxios, getUsersAxios} from "../services/users.api.axios.service";
 import User from "../User/User";
 
 const Users = () => {
@@ -15,6 +15,10 @@ const Users = () => {
     useEffect(()=>{
         getUsersAxios().then(value => setUsers(value.data))
     },[]);
+
+    useEffect(()=>{
+        getPostsAxios().then(value => setPosts(value))
+    })
 
     return (
         <div>

@@ -7,7 +7,9 @@ const User = (props) => {
             <h2>{user.id} {user.name}</h2>
             <div>User Name: {user.username}</div>
             <div>Email: {user.email}</div>
-            <button onClick={lift}>User posts</button>
+            <button onClick={()=>{
+                lift(user.id)
+            }}>User posts</button>
         </div>
     );
 };
