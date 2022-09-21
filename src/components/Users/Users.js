@@ -2,27 +2,26 @@ import React, {useEffect, useState} from 'react';
 
 import {getPostsAxios, getUsersAxios} from "../services/users.api.axios.service";
 import User from "../User/User";
+import Post from "../Post/Post";
 
 const Users = () => {
 
     let [users, setUsers] = useState([]);
-    let [posts, setPosts] = useState(null)
+    let [post, setPost] = useState(null)
 
     const lift = (id) => {
-        setPosts(id);
+        getPostsAxios().then(value => setPost(value.data))
     }
 
     useEffect(()=>{
-        getUsersAxios(id).then(value => setUsers(value.data))
+        getUsersAxios().then(value => setUsers(value.data))
     },[]);
 
-    useEffect(()=>{
-        getPostsAxios().then(value => setPosts(value))
-    })
 
     return (
         <div>
-            {users.map((user, index)=>(<User user={user} key={index} lift={lift}/>))}
+            <div>{users.map((user, index) => (<User user={user} key={index} lift={lift}/>))}</div>
+            {post && <div><Post/></div>}
         </div>
     );
 };

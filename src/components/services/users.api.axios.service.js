@@ -9,7 +9,7 @@ const getUsersAxios = () => {
 }
 
 const getPostsAxios = (id) => {
-    return axiosInstance.get('/'+id+'/posts')
+    return axiosInstance.get(+'/'+id+'/posts')
 }
 
 export {getUsersAxios, getPostsAxios}
