@@ -1,17 +1,12 @@
 import React from 'react';
 
-const User = (props) => {
-    let {user, lift} = props;
+const User = ({user, userIdLift}) => {
     return (
         <div>
-            <h2>{user.id} {user.name}</h2>
-            <div>User Name: {user.username}</div>
-            <div>Email: {user.email}</div>
-            <button onClick={()=>{
-                lift(user.id)
-            }}>User posts</button>
+            <div>{user.id}-{user.name}</div>
+            <button onClick={()=> userIdLift(user.id)}>Posts</button>
         </div>
     );
 };
 
-export default User;
+export {User};

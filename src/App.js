@@ -1,14 +1,22 @@
-import './App.css';
+import {Posts, Users} from "./components";
+import {useState} from "react";
+import {postAxiosService} from "./services";
 
-import Users from "./components/Users/Users";
 
-function App() {
+const App = () => {
+
+    const [posts, setPosts] = useState([]);
+
+    const userIdLift = (userId)=>{
+        postAxiosService.getUserPosts(userId).then(({data})=> setPosts(data))
+    }
+
     return (
-        <div className="App">
-            <Users/>
-
+        <div>
+            <Users userIdLift={userIdLift}/>
+            <Posts posts={posts}/>
         </div>
     );
-}
+};
 
 export default App;

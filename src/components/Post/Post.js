@@ -1,15 +1,14 @@
 import React from 'react';
 
-const Post = (props) => {
-    let {post} = props;
+const Post = ({post}) => {
     return (
         <div>
-            <div>UserID: {post?.userId}</div>
-            <div>ID: {post?.id}</div>
-            <div>Title: {post?.title}</div>
-            <div>Body: {post?.body}</div>
+            <div><b>User ID:</b> {post.userId}</div>
+            <div><b>ID:</b> {post.id}</div>
+            <div><b>Title:</b> {post.title}</div>
+            <div><b>Body:</b> {post.body}</div>
         </div>
     );
 };
 
-export default Post;
+export {Post};
