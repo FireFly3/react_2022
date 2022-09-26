@@ -1,10 +1,11 @@
+import {Cars} from "./component";
 
-function App() {
-  return (
-    <div className="App">
-
-    </div>
-  );
+function App() {// 17. кладемо компоненту карси в апп джес
+    return (
+        <div className="App">
+            <Cars/>
+        </div>
+    );
 }
 
 export default App;
