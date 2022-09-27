@@ -1,1 +1,1 @@
-export * from './urls'; //5. єкспортуємо все на зовеі з файлу урлс
+export * from './urls';
