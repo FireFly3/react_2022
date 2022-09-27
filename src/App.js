@@ -1,6 +1,9 @@
 import './App.css'
-import {Users} from "./component/Users/Users";
+
+import {Users} from "./component";
 import {Comments} from "./component/Comments/Comments";
+
+
 
 function App() {
     return (
