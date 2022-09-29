@@ -1,19 +1,45 @@
 import './App.css';
 import {
-    BrowserRouter, //1 imports
+    //1 imports
     Routes,
     Route,
     Link,
     Outlet
 } from "react-router-dom";
 import Users from "./components/Users/Users";
+import {Home} from "./components/Home/Home";
+import {UserDetails} from "./components/UserDetails/UserDetails";
+import {UserDetailsV2} from "./components/UserDetailsV2/UserDetailsV2";
+import {Posts} from "./components/Posts/Posts";
+import {PostDetails} from "./components/PostDetails/PostDetails";
 
 function App() {
+    // 4. make links
+    // 5. make Route
     return (
         <div className="App">
-            <Users/>
+            <ul>
+                <li>
+                    <Link to={'/'}>Home page</Link></li>
+                <li>
+                    <Link to={'/users'}>Users</Link></li>
+                <li>
+                    <Link to={'/posts'}>Posts</Link></li>
+            </ul>
+
+            <Routes>
+                <Route index element={<Home/>}/>
+                <Route path={'users'} element={<Users/>}/>
+                <Route path={'users/:id'} element={<UserDetails/>}/>
+                <Route path={'users/v2/:id'} element={<UserDetailsV2/>}/>
+                <Route path={'posts'} element={<Posts/>}>
+                    <Route path={':id'} element={<PostDetails/>}/>
+                </Route>
+            </Routes>
+
         </div>
-    );
+    )
+        ;
 }
 
 export default App;
