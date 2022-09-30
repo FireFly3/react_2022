@@ -4,6 +4,7 @@ import {
     Link,
     Outlet
 } from 'react-router-dom'
+import {Todos} from "./components/Todos/Todos";
 
 function App() {
   return (
@@ -13,6 +14,9 @@ function App() {
         <div><Link to={'/albums'}>Albums</Link></div>
         <div><Link to={'/comments'}>Comments</Link></div>
       </div>
+      <Routes>
+        <Route path={'todos'} element={<Todos/>}/>
+      </Routes>
 
     </div>
   );

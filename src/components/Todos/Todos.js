@@ -1,6 +1,10 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 
 const Todos = () => {
+    const [todos, setTodos] = useState([]);
+    useEffect(()=>{
+
+    })
     return (
         <div>
             
