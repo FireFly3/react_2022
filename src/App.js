@@ -4,8 +4,8 @@ import {
     Link,
     Outlet
 } from 'react-router-dom'
-import {Todos} from "./components/Todos/Todos";
-import {Albums} from "./components/Albums/Albums";
+import {Albums, Todos} from "./components";
+
 
 function App() {
   return (
