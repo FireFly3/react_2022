@@ -5,6 +5,7 @@ import {
     Outlet
 } from 'react-router-dom'
 import {Todos} from "./components/Todos/Todos";
+import {Albums} from "./components/Albums/Albums";
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
       </div>
       <Routes>
         <Route path={'todos'} element={<Todos/>}/>
-          <Route path={'albums'} element/>
+          <Route path={'albums'} element={<Albums/>}/>
       </Routes>
 
     </div>
