@@ -16,6 +16,7 @@ function App() {
       </div>
       <Routes>
         <Route path={'todos'} element={<Todos/>}/>
+          <Route path={'albums'} element/>
       </Routes>
 
     </div>
