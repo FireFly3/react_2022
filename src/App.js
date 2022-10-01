@@ -28,8 +28,9 @@ function App() {
             </ul>
 
             <Routes>
-                <Route index element={<Home/>}/>
-                <Route path={'users'} element={<Users/>}/>
+                <Route index element={<Home/>}/>{/* 6. впроваджуемо роут яки буде відображати юзерів при натисканні на лінку хом*/}
+                <Route path={'users'} element={
+                    <Users/>}/> {/* 7. впроваджуемо роут яки буде відображати юзерів при натисканні на лінку Юзер, тобто п шлюху буде прописаний юзерів*/}
                 <Route path={'users/:id'} element={<UserDetails/>}/>
                 <Route path={'users/v2/:id'} element={<UserDetailsV2/>}/>
                 <Route path={'posts'} element={<Posts/>}>
