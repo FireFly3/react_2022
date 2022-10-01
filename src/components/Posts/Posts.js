@@ -6,21 +6,20 @@ import {useLocation} from "react-router-dom";
 const Posts = () => {
     const [posts, setPosts] = useState([]);
 
+let {state: comment} = useLocation()
+    let id = comment.postId;
 
-    let location = useLocation();
-    let {state: comment} = location;
-    console.log(location);
 
-    // useEffect(() => {
-    //     postsService.getById(comment.postId).then(({data}) => setPosts(data))
-    // },[postId])
+    useEffect(() => {
+        postsService.getById(id).then(({data}) => setPosts(data))
+    },[id])
 
     return (
         <div>
-            {/*{*/}
-            {/*    posts.map(post => <Post key={post.id} post={post}/>)*/}
-            {/*}*/}
-            J
+            {
+                posts.map(post => <Post key={post.id} post={post}/>)
+            }
+            {/*{JSON.stringify(comment)}*/}
         </div>
     );
 };
