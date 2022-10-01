@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom'
 import {Albums, Todos} from "./components";
 import {Comments} from "./components/Comments/Comments";
+import {Posts} from "./components/Posts/Posts";
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
                 <Route path={'todos'} element={<Todos/>}/>
                 <Route path={'albums'} element={<Albums/>}/>
                 <Route path={'comments'} element={<Comments/>}/>
+                <Route path={'/posts/:id'} element={<Posts/>}/>
             </Routes>
 
         </div>
