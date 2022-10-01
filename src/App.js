@@ -20,8 +20,11 @@ function App() {
             <Routes>
                 <Route path={'todos'} element={<Todos/>}/>
                 <Route path={'albums'} element={<Albums/>}/>
-                <Route path={'comments'} element={<Comments/>}/>
-                <Route path={'comments/:id'} element={<Posts/>}/>
+                <Route path={'comments'} element={<Comments/>}>
+
+
+                    <Route path={'comments/:id'} element={<Posts/>}/>
+                </Route>
             </Routes>
 
         </div>
