@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
 
-
 import {todosService} from "../../services";
 import {Todo} from "../Todo/Todo";
 

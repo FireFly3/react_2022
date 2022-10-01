@@ -1,9 +1,5 @@
-import {
-    Routes,
-    Route,
-    Link,
-    Outlet
-} from 'react-router-dom'
+import {Routes, Route, Link} from 'react-router-dom'
+
 import {Albums, Todos} from "./components";
 import {Comments} from "./components/Comments/Comments";
 import {Posts} from "./components/Posts/Posts";
