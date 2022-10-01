@@ -6,20 +6,20 @@ import {useLocation} from "react-router-dom";
 const Posts = () => {
     const [post, setPost] = useState(null);
 
-let {state: comment} = useLocation()
+    let {state: comment} = useLocation()
     let id = comment.postId;
+    console.log(id);
 
 
     useEffect(() => {
         postsService.getById(id).then(({data}) => setPost(data))
-    },[id])
+    }, [id])
 
     return (
         <div>
             {
-                post&&(<Post post={post}/>)
+                post && (<Post post={post}/>)
             }
-            {/*{JSON.stringify(comment)}*/}
         </div>
     );
 };
