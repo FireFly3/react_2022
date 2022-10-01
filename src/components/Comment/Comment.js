@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 const Comment = ({comment}) => {
     return (
         <div>
-            <Link to={'/posts/'+ comment.postId} state={{...comment}}>{comment.id} - {comment.name}</Link>
+            <Link to={comment.postId.toString()} state={{...comment}}>{comment.id} - {comment.name}</Link>
         </div>
     );
 };
