@@ -1,2 +1,2 @@
-export * from './Count1';
-export * from './Count2';
+export * from './Cats/Cats';
+export * from './Dogs/Dogs';

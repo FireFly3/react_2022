@@ -1,10 +1,11 @@
-import {Count1, Count2} from "./components";
+import {Cats, Dogs} from "./components";
+
 
 function App() {
     return (
-        <div>
-            <Count1/>
-            <Count2/>
+        <div style={{display: 'flex', justifyContent: 'space-around'}}>
+            <Cats/>
+            <Dogs/>
         </div>
     );
 }

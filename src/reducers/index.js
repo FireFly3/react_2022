@@ -1,3 +1,3 @@
-export * from './count2.reducer';
-export * from './count1.reducer';
-export * from './count.actions';
+export * from './animals.actions';
+export * from './cats.reducer';
+export * from './dogs.reducer';
