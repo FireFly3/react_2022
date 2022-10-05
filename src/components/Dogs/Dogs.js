@@ -1,9 +1,10 @@
 import React, {useRef} from 'react';
 
-import {useDogsReduser} from "../../reducers";
+import {useCatsDogsReducer} from "../../reducers";
+
 
 const Dogs = () => {
-    const [state, dispatch] = useDogsReduser();
+    const [state, dispatch] = useCatsDogsReducer();
 
     const dogInput = useRef();
 

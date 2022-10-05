@@ -1,9 +1,10 @@
 import {useRef} from "react";
 
-import {useCatsReducer} from "../../reducers";
+import {useCatsDogsReducer} from "../../reducers";
+
 
 const Cats = () => {
-    const [state, dispatch] = useCatsReducer();
+    const [state, dispatch] = useCatsDogsReducer();
 
     const catInput = useRef();
 
@@ -23,6 +24,4 @@ const Cats = () => {
     );
 };
 
-export {
-    Cats
-}
+export {Cats}
