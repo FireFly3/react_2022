@@ -1,6 +1,6 @@
 import {LOAD_POSTS} from "./actions";
 
-const postReducer = (state = {posts: [], post: null}, action) => {
+const postReducer = (state = {posts: []}, action) => {
     switch (action.type) {
         case LOAD_POSTS:
             return {...state, posts: action.payload};
