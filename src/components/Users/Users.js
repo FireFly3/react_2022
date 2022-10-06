@@ -6,13 +6,13 @@ import {LOAD_USERS} from "../../reducers/actions";
 
 const Users = () => {
 
-    let {users} = useSelector(state => state.useReducer);
+    let {users} = useSelector(state => state.userReducer);
 
     let dispatch = useDispatch();
 
     useEffect(() => {
-        userService.getAllUsers().then(({value}) => {
-            dispatch({type: LOAD_USERS, payload: value})
+        userService.getAllUsers().then(({data}) => {
+            dispatch({type: LOAD_USERS, payload: data})
         })
     },[])
 
