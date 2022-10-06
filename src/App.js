@@ -6,7 +6,7 @@ function App() {
 
     return (
       <Routes>
-          <Route index element={<Home/>}>
+          <Route  path={'/'} element={<Home/>}>
               <Route path={'users'} element={<Users/>}/>
               <Route path={'posts'} element={<Posts/>}/>
               <Route path={'comments'} element={<Comments/>}/>
