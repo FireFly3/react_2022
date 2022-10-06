@@ -1,6 +1,7 @@
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
 import {Users} from "./components";
+import {Route, Routes} from "react-router-dom";
 
 function App() {
 
@@ -17,9 +18,9 @@ function App() {
     // }, [])
 
     return (
-        <div>
-            <Users/>
-        </div>
+      <Routes>
+          <Route path={'/'} element></Route>
+      </Routes>
     );
 }
 

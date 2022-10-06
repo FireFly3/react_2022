@@ -5,6 +5,7 @@ import App from './App';
 import {Provider} from "react-redux";
 import {combineReducers, createStore} from "redux";
 import {commentReducer, postReducer, userReducer} from "./reducers";
+import {BrowserRouter} from "react-router-dom";
 
 
 // const userReducer = (state = {users: [], user: null}, action) => {
@@ -57,7 +58,9 @@ let store = createStore(reducer);
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <Provider store={store}>
-        <App/>
+        <BrowserRouter>
+            <App/>
+        </BrowserRouter>
     </Provider>
 );
 
