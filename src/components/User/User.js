@@ -1,9 +1,11 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
 const User = ({user}) => {
     return (
         <div>
-            {user.id} - {user.name}
+            <Link to={user.id.toString()}>{user.id} - {user.name}</Link>
+            
         </div>
     );
 };
