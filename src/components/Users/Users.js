@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
-import {useDispatch, useSelector} from "react-redux";
+import {Outlet} from "react-router-dom";
 
+import {useDispatch, useSelector} from "react-redux";
 import {userService} from "../../services/user.service";
 import {User} from "../User/User";
 import {LOAD_USERS} from "../../reducers/actions";
