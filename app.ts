@@ -92,3 +92,28 @@
 // const x = (str:string):void=>{ // 11. void - значить що функція нічого не повертає
 //
 // }
+
+//______________________________________
+
+interface IShapeActions{
+    area:()=>number,
+    perimetr:()=>number
+}
+
+interface IGreeting {
+    hello:()=> void
+}
+
+class Rectangle implements IShapeActions, IGreeting{
+    area(): number {
+        return 0;
+    }
+
+    hello(): void {
+    }
+
+    perimetr(): number {
+        return 0;
+    }
+
+}
