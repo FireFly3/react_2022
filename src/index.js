@@ -6,6 +6,7 @@ import App from './App';
 import {setupStore} from "./redux";
 
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const store = setupStore();
 root.render(

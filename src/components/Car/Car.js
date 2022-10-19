@@ -1,14 +1,15 @@
 import React from 'react';
-
 import {useDispatch} from "react-redux";
+
 import {carActions} from "../../redux/slices";
+import css from './Car.module.css'
 
 const Car = ({car}) => {
     const {id, model, price, year} = car;
 
     const dispatch = useDispatch();
     return (
-        <div>
+        <div className={css.wrap}>
             <div>id:{id}</div>
             <div>model:{model}</div>
             <div>price:{price}</div>

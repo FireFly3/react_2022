@@ -6,7 +6,7 @@ const rootReducer = combineReducers({
     cars: carReducer
 });
 
-const setupStore = configureStore({
+const setupStore = () => configureStore({
     reducer: rootReducer
 });
 

@@ -1,6 +1,6 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import {carService} from "../../services";
-import {validateActive} from "@reduxjs/toolkit/dist/listenerMiddleware/task";
+
 
 const initialState = {
     cars: [],
@@ -37,7 +37,7 @@ const deleteCar = createAsyncThunk(
     'carSlice/deleteById',
     async ({id}, {rejectWithValue}) => {
         try {
-            const {id} = await carService.deleteById(id);
+            await carService.deleteById(id);
             return id;
         } catch (e) {
             return rejectWithValue(e.response.data)
@@ -52,7 +52,7 @@ const updateById = createAsyncThunk(
             const {data} = await carService.updateById(id, car);
             return data
         } catch (e) {
-
+            return rejectWithValue(e.response.data)
         }
     }
 );
@@ -86,11 +86,12 @@ const carSlice = createSlice({
             .addCase(updateById.fulfilled, (state, action) => {
                 const findCar = state.cars.find(value => value.id === action.payload.id);
                 Object.assign(findCar, action.payload)
+                state.carForUpdate = null;
             })
-            .addDefaultCase((state, action)=>{
+            .addDefaultCase((state, action) => {
                 const [pathElement] = action.type.split('/').splice(-1);
-                if(pathElement==='reject'){
-                    state.errors=action.payload;
+                if (pathElement === 'rejected') {
+                    state.errors = action.payload;
                     state.loading = false;
                 }
             })
