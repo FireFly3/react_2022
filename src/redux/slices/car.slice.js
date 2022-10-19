@@ -1,5 +1,6 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import {carService} from "../../services";
+import {validateActive} from "@reduxjs/toolkit/dist/listenerMiddleware/task";
 
 const initialState = {
     cars: [],
@@ -75,11 +76,23 @@ const carSlice = createSlice({
             .addCase(getAll.pending, (state, action) => {
                 state.loading = true
             })
-            .addCase(create.fulfilled,(state, action)=>{
+            .addCase(create.fulfilled, (state, action) => {
                 state.cars.push(action.payload);
             })
-            .addCase(deleteCar.fulfilled, (state, action)=>{
-                state.cars.findIndex(value => value.id === action.payload)
+            .addCase(deleteCar.fulfilled, (state, action) => {
+                const carIndex = state.cars.findIndex(value => value.id === action.payload);
+                state.cars.splice(carIndex, 1)
+            })
+            .addCase(updateById.fulfilled, (state, action) => {
+                const findCar = state.cars.find(value => value.id === action.payload.id);
+                Object.assign(findCar, action.payload)
+            })
+            .addDefaultCase((state, action)=>{
+                const [pathElement] = action.type.split('/').splice(-1);
+                if(pathElement==='reject'){
+                    state.errors=action.payload;
+                    state.loading = false;
+                }
             })
 });
 

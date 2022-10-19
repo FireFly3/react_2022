@@ -15,7 +15,7 @@
     "react-redux": "^8.0.4",
     "react-hook-form": "^7.38.0",
     "@reduxjs/toolkit": "^1.8.6",
-    "eslint": "^8.25.0"
+    "eslint": "8.22.0"
   },
   "scripts": {
     "start": "react-scripts start",
