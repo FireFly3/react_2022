@@ -1,6 +1,7 @@
 import {createAsyncThunk, createSlice, current} from "@reduxjs/toolkit";
+
 import {userService} from "../../services";
-import {retry} from "@reduxjs/toolkit/query";
+
 
 let initialState = {
     users: [],
@@ -71,7 +72,7 @@ const userSlice = createSlice({
                 state.error = action.payload
                 state.loading = false
             })
-            .addCase(getAll.pending, (state, action) => {
+            .addCase(getAll.pending, (state) => {
                 state.loading = true
             })
             .addCase(getById.fulfilled, (state, action) => {
